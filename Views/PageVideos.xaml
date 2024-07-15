@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="PM2T24Video.Views.PageVideos"
-             Title="PageVideos">
-    <VerticalStackLayout>
+             Title="Videos">
+    <StackLayout Padding="20">
         <Button Text="Tomar Video" Clicked="Button_Clicked"/>
-        <ListView x:Name="VideosList">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding nombre}" Detail="{Binding fecha}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </VerticalStackLayout>
+        <Picker x:Name="VideosPicker" Title="Selecciona un video" SelectedIndexChanged="videosSelects_SelectedIndexChanged">
+            <Picker.ItemDisplayBinding>
+                <Binding Path="nombre" />
+            </Picker.ItemDisplayBinding>
+        </Picker>
+        <toolkit:MediaElement x:Name="VideoPlayer" WidthRequest="300" HeightRequest="400" />
+    </StackLayout>
 </ContentPage>
