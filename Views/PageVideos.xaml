@@ -5,12 +5,12 @@
              x:Class="PM2T24Video.Views.PageVideos"
              Title="Videos">
     <StackLayout Padding="20">
-        <Button Text="Tomar Video" Clicked="Button_Clicked"/>
-        <Picker x:Name="VideosPicker" Title="Selecciona un video" SelectedIndexChanged="videosSelects_SelectedIndexChanged">
+        <toolkit:MediaElement x:Name="VideoPlayer" WidthRequest="300" HeightRequest="500" />
+        <Button Text="Tomar Video" Clicked="Button_Clicked" Margin="5, 10, 5, 5" WidthRequest="300"/>
+        <Picker x:Name="VideosPicker" Title="Selecciona un video" SelectedIndexChanged="videosSelects_SelectedIndexChanged" WidthRequest="300" Margin="5,5,5,5">
             <Picker.ItemDisplayBinding>
                 <Binding Path="nombre" />
             </Picker.ItemDisplayBinding>
         </Picker>
-        <toolkit:MediaElement x:Name="VideoPlayer" WidthRequest="300" HeightRequest="400" />
     </StackLayout>
 </ContentPage>
